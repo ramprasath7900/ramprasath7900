@@ -1,0 +1,48 @@
+// Get form and link elements by their IDs
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+const showRegister = document.getElementById('showRegister');
+const showLogin = document.getElementById('showLogin');
+
+// --- Form Switching Logic ---
+
+// Show Register Form when the 'Sign Up' link is clicked
+showRegister.addEventListener('click', (e) => {
+    e.preventDefault(); // Stop the default link behavior
+    loginForm.classList.add('hidden');
+    registerForm.classList.remove('hidden');
+});
+
+// Show Login Form when the 'Log In' link is clicked
+showLogin.addEventListener('click', (e) => {
+    e.preventDefault(); // Stop the default link behavior
+    registerForm.classList.add('hidden');
+    loginForm.classList.remove('hidden');
+});
+
+// --- Form Submission Handlers (For Demo) ---
+
+// Handle Login Form Submission
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent the page from reloading
+    
+    // Retrieve values from the login fields (assuming your HTML uses these IDs)
+    const username = document.getElementById('loginUsername').value;
+    const password = document.getElementById('loginPassword').value;
+
+    // Display a confirmation alert (in a real app, you'd send this data to a server)
+    alert(`Login Submitted!\nUsername: ${username}\nPassword: ${password}`);
+});
+
+// Handle Register Form Submission
+registerForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent the page from reloading
+    
+    // Retrieve values from the registration fields (assuming your HTML uses these IDs)
+    const username = document.getElementById('registerUsername').value;
+    const email = document.getElementById('registerEmail').value;
+    const password = document.getElementById('registerPassword').value;
+    
+    // Display a confirmation alert (in a real app, you'd send this data to a server)
+    alert(`Registration Submitted!\nUsername: ${username}\nEmail: ${email}\nPassword: ${password}`);
+});
